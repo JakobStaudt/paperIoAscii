@@ -11,11 +11,16 @@ from queue import Queue
 import colorama
 import os
 import random
+import sys
 
 
 
 serverUrl = "example.com"
 serverPort = 1893
+
+if serverUrl == "example.com":
+    print("please change Server URL in game.py")
+    sys.exit()
 
 
 
@@ -42,7 +47,7 @@ except:
             os.system('clear')
     except:
         print("Clearing screen not possible...")
-        system.exit()
+        sys.exit()
 
 
 def diff(first, second):
@@ -242,7 +247,7 @@ class Game:
             print(screenString)
             self.debugMessage = ""
             frameTime = time.time() - self.lastScreenPrinted
-            print(1/frameTime)
+            #print(1/frameTime)
             self.lastScreenPrinted = time.time()
             #print("----------------------")
             #print(len(self.screenBuffer), len(self.screenBuffer[0]))
